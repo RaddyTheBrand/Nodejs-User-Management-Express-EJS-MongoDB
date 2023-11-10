@@ -21,7 +21,9 @@ exports.homepage = async (req, res) => {
         .skip(perPage * page - perPage)
         .limit(perPage)
         .exec(); 
-      const count = await Customer.count();
+      // Count is deprecated. Use countDocuments({}) or estimatedDocumentCount() 
+      // const count = await Customer.count();
+        const count = await Customer.countDocuments({});
 
       res.render('index', {
         locals,
