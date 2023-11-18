@@ -3,7 +3,13 @@ require('dotenv').config();
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
 const methodOverride = require('method-override');
-const { flash } = require('express-flash-message');
+
+// npm uninstall express-flash-message
+//const { flash } = require('express-flash-message');
+
+// npm install connect-flash
+const flash = require('connect-flash');
+
 const session = require('express-session');
 const connectDB = require('./server/config/db');
 
